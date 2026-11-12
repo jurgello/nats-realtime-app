@@ -764,39 +764,6 @@ The Go server owns the NATS connection and multiplexes messages through its loca
 
     For a real production application, I'd organize responsibilities like this:
 
-```text
-FRONTEND
-Plain JavaScript
-|
-WebSocket
-|
-v
-GO API SERVER
-|
-+------------+------------+
-| | |
-v v v
-Auth WebSocket Message
-Service Manager Handler
-|
-v
-NATS Publisher
-|
-v
-NATS Core
-|
-+------------+------------+
-| | |
-v v v
-Server 1 Server 2 Server 3
-| | |
-v v v
-Local Hub Local Hub Local Hub
-| | |
-v v v
-Clients Clients Clients
-```
-
 ![](./assets/reco-arch.png)
 
 Useful official documentation:
